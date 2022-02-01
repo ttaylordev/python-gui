@@ -9,33 +9,27 @@ apps = []
 
 # define functions for buttons
 def addApp():
-    filename= filedialog.askopenfile(initialdir='/', title="Select File",
-        filetypes=(('executables', '*.exe'), ('all files', '*.*')))
+    filename= filedialog.askopenfile(initialdir='/', title="Select File", filetypes=(('executables', '*.exe'), ('all files', '*.*')))
     apps.append(filename)
     print(filename)
-    
+
 # def runApp():
 
 # create a canvas
 canvas = tk.Canvas(root, height=720, width=720, bg="#424242")
-
-
 # attach it to the root
 canvas.pack()
 
 # inner frame
 frame = tk.Frame(root, bg='white')
-# attach it to the root and provide some 
-# padding & center it within the canvas
+# attach it to the root and provide some borders & center it within the canvas
 frame.place(relwidth=0.975, relheight=0.975, relx=0.0125, rely=0.0125)
 
 # add some buttons
-openFile = tk.Button(root, text='Open File', padx=10, 
-                        pady=5, fg='white', bg='#424242', command=addApp)
+openFile = tk.Button(root, text='Open File', padx=10, pady=5, fg='white', bg='#424242', command=addApp)
 openFile.pack()
 
-runApps = tk.Button(root, text='Run Aapps', padx=10, pady=5, 
-                        fg='white', bg='#424242')
+runApps = tk.Button(root, text='Run Aapps', padx=10, pady=5, fg='white', bg='#424242')
 runApps.pack()
 
 # bottomframe = Frame(root)
